@@ -49,7 +49,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-      
             // 
             // button1
             // 
@@ -91,6 +90,7 @@
             0,
             0,
             0});
+            this.DiskCount.ValueChanged += new System.EventHandler(this.DiskCount_ValueChanged);
             // 
             // lblMoves
             // 
@@ -107,7 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listMoves.FormattingEnabled = true;
-            this.listMoves.Location = new System.Drawing.Point(905, 50);
+            this.listMoves.Location = new System.Drawing.Point(905, 48);
             this.listMoves.Name = "listMoves";
             this.listMoves.Size = new System.Drawing.Size(246, 550);
             this.listMoves.TabIndex = 7;
@@ -121,10 +121,6 @@
             this.button2.Text = "Start";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KYRSACH
@@ -30,7 +31,6 @@ namespace KYRSACH
         {
             return this.nomer;
         }
-   
         public int X
         {
             get { return 30 + (nomer - 1) * 200; }
@@ -44,11 +44,40 @@ namespace KYRSACH
             int c = 0;
             for (int i = 0; i < h.Count(); i++)
             {
-                int a = h.ElementAt(i);     
-                g.FillRectangle(Brushes.Green,10 + a*10 + position, 460-c , 200 - a * 20, 40);
+                int a = h.ElementAt(i);  
+           
+                DrawRectangle(GetColor(a),a + position, 300+c, a * 60, 40,g);
                 c += 42;
           
             }
         }
+        public void DrawRectangle(Brush brush,int xCenter, int yCenter, int width, int height, Graphics g)
+        {
+            int x = xCenter - width / 2;
+            int y = yCenter - height / 2;
+            g.FillRectangle(brush, x, y, width, height);
+            
+        }
+        public Brush GetColor(int k)
+        {
+
+            switch (k)
+            {
+                case 1: return Brushes.Green;
+                case 2: return Brushes.Yellow;
+                case 3: return Brushes.Red;
+                case 4: return Brushes.Purple;
+                case 5: return Brushes.Aqua;
+                case 6: return Brushes.Orange;
+                case 7: return Brushes.Pink;
+                case 8: return Brushes.Blue;
+                default: throw new ArgumentException("Incorrect value");
+
+            }
+
+
+        }
+       
+        
     }
 }
